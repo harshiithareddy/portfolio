@@ -28,29 +28,67 @@ var experienceData = [
 
 var caseStudies = [
   { id: "onboarding", title: "Account Onboarding Platform", category: "Digital Transformation, Process Optimization", color: "#A78BFA", personal: false,
+    cardDesc: "Transformed a 47-step manual onboarding process at a Top U.S. Financial Institution into a digital dual-view platform serving both financial advisors and their clients.",
     summary: "Led end-to-end requirements and workflow design for a digital account onboarding platform at a Top U.S. Financial Institution. Transformed a manual process (PDF forms, manual email approvals) into a seamless dual-view application, serving both financial advisors and their clients.",
-    role: "Owned requirements elicitation, process modeling, BRD/FRD authoring, and UAT coordination across 4 business units.",
-    stakeholders: "Product Managers, Compliance Officers, Engineering Leads, Advisor Operations, Legal",
-    phases: [
-      { title: "Problem", content: "ICONROWS", structured: { intro: "The onboarding experience for financial advisors and clients was heavily manual, fragmented, and error-prone.", rows: [{ icon: "doc", text: "Relied on PDF forms with email-driven approvals across multiple stakeholders" },{ icon: "users", text: "47 manual steps and 8+ handoffs between teams per application" },{ icon: "clock", text: "12+ day average onboarding turnaround" },{ icon: "alert", text: "~35% submission rejection rate due to missing or inconsistent data" }] } },
-      { title: "Approach", content: "ICONROWS", structured: { intro: "We treated this as a 0 \u2192 1 digital transformation initiative, not just a process cleanup.", rows: [{ icon: "users", text: "Reframed onboarding as a product experience problem across two personas: financial advisors and end clients" },{ icon: "target", text: "Focused on data quality at intake as the root cause of downstream inefficiencies" },{ icon: "chat", text: "Conducted 15+ stakeholder interviews across advisor operations, compliance, engineering, and legal" },{ icon: "eye", text: "Shadowed 6 financial advisors to understand the true day-to-day onboarding workflow" },{ icon: "search", text: "Performed gap analysis between the As-Is process and regulatory/KYC requirements" }] } },
-      { title: "Process", content: "STRUCTURED", structured: { sections: [{ heading: "Current-State Analysis", text: "Modeled the full onboarding lifecycle in BPMN (47 steps, 8 swimlanes). Identified 3 critical bottlenecks:", bullets: ["Duplicate data entry across multiple PDF forms", "Manual KYC document verification", "Unclear and inconsistent rejection criteria"] }, { heading: "Solution Design", text: "Designed a dual-view digital onboarding platform:", bullets: ["Advisor-facing portal for initiating and tracking applications", "Client-facing interface for completing forms and e-signatures"], highlight: "Real-time field validation \u00b7 Conditional logic for adaptive form flows \u00b7 Integrated e-signature capability" }] } },
-      { title: "Artifacts", content: "VISUAL" },
-      { title: "Impact", content: "PROBLEM", structured: { intro: "Measurable outcomes delivered post-launch.", metrics: [["45%","Reduction in onboarding time"],["60%","Fewer submission errors"],["100%","Audit compliance"],["27%","Advisor satisfaction increase"]], pains: ["Eliminated paper forms entirely","Eliminated email-based approvals","Fully digital dual-view experience"] } },
-      { title: "Learnings", content: "Early compliance involvement saved 3 sprints of rework. The biggest insight: unclear rejection criteria, not slow systems, caused most rework loops. Designing the dual view (advisor vs. client) required deeply understanding two very different user journeys for the same underlying data." }
-    ] },
+    cardDesc: "Digitized a 47-step manual onboarding process at a Top U.S. Financial Institution into a dual-view digital platform. Reduced onboarding time by 45% and submission errors by 60%.",
+    highlights: [["What", "Digitized a 47-step manual process into a dual-view platform for advisors and clients"], ["My role", "Requirements elicitation, process modeling, BRD/FRD, and UAT across 4 business units"], ["Result", "45% faster onboarding, 60% fewer errors, 100% audit compliance"]],
+    meta: [["My Role", "Owned requirements elicitation, process modeling, BRD/FRD authoring, and UAT coordination across 4 business units."], ["Stakeholders", "Product Managers, Compliance Officers, Engineering Leads, Advisor Operations, Legal"]],
+    highlights: [["What", "Digitized a 47-step manual process into a dual-view platform for advisors and clients"], ["My role", "Requirements elicitation, process modeling, BRD/FRD, and UAT across 4 business units"], ["Result", "45% faster onboarding, 60% fewer errors, 100% audit compliance"]],
+    problem: {
+      intro: "The onboarding experience for financial advisors and clients was heavily manual, fragmented, and error-prone.",
+      points: ["Relied on PDF forms with email-driven approvals across multiple stakeholders", "47 manual steps and 8+ handoffs between teams per application", "12+ day average onboarding turnaround", "~35% submission rejection rate due to missing or inconsistent data"],
+      insight: "Unclear rejection criteria, not slow systems, caused most rework loops. I discovered this by shadowing 6 financial advisors and watching where applications actually stalled."
+    },
+    approach: {
+      intro: "Treated this as a 0 to 1 product experience problem, not just a process cleanup.",
+      points: ["Reframed onboarding across two personas: financial advisors and end clients", "Focused on data quality at intake as the root cause of downstream inefficiencies", "Conducted 15+ stakeholder interviews across advisor operations, compliance, engineering, and legal", "Shadowed 6 financial advisors to understand the true day-to-day workflow", "Performed gap analysis between the as-is process and regulatory/KYC requirements"]
+    },
+    scope: {
+      prioritized: [["Dual-view platform (advisor + client)", "Two fundamentally different user journeys needed their own optimized interfaces for the same underlying data."], ["Real-time field validation", "Catching errors at input eliminates the rejection-rework cycle entirely."], ["Integrated e-signature", "Removing the print-sign-scan loop was the single biggest time savings."], ["Auto KYC/AML screening", "100% audit compliance is non-negotiable in financial services."]],
+      tradeoffs: [["Early compliance involvement", "Added 2 weeks to discovery but saved 3 sprints of rework. Compliance requirements surfaced constraints that would have forced redesign later."], ["Guided wizard over free-form", "Longer initial design cycle, but ~35% rejection rate dropped to near zero because users couldn't submit incomplete data."]]
+    },
+    metrics: [["45%", "Faster onboarding"], ["60%", "Fewer errors"], ["100%", "Audit compliance"], ["27%", "Advisor satisfaction"]],
+    learnings: [
+      { title: "Compliance as a design partner, not a gate", text: "Early compliance involvement saved 3 sprints of rework. Treating regulatory requirements as design constraints rather than sign-off checkboxes changes the entire approach." },
+      { title: "Root cause over symptoms", text: "The biggest insight: unclear rejection criteria, not slow systems, caused most rework loops. Fixing the criteria fixed the process." },
+      { title: "Same data, different journeys", text: "Designing the dual view required deeply understanding two very different user journeys for the same underlying data. The advisor needs speed; the client needs guidance." }
+    ]
+  },
   { id: "openbanking", title: "Open Banking Data Aggregation Platform", category: "FinTech, API Platform Design", color: "#8B6CF0", personal: true,
+    cardDesc: "Designed a platform connecting 500+ financial institutions via Plaid, with a structured error taxonomy that proactively prevents ~80% of edge-case bugs at scale.",
     summary: "Designing an Open Banking platform that connects to multiple financial institutions via Plaid and Open Banking APIs to aggregate account data, transactions, and identity verification into a unified view for fintech applications.",
-    scope: "System architecture, API specifications, data modeling, error handling design, and end-to-end documentation",
-    why: "Deep-dive into Open Banking infrastructure to understand fintech platform design patterns at scale",
-    phases: [
-      { title: "Problem", content: "ICONROWS", structured: { intro: "Fintech applications rely on access to user financial data, but integrating with financial institutions is highly fragmented.", rows: [{ icon: "doc", text: "Each institution exposes different APIs, auth methods, and schemas" },{ icon: "alert", text: "Varying rate limits, uptime reliability, and error behaviors across providers" },{ icon: "clock", text: "Integration cycles take weeks per institution, a major bottleneck for fintech teams trying to scale" }] } },
-      { title: "Approach", content: "ICONROWS", structured: { intro: "Approached this as a platform design problem, focusing on abstraction, reliability, and scalability.", rows: [{ icon: "search", text: "Researched Open Banking standards (PSD2, FDX) and evaluated aggregation providers (Plaid, MX, Yodlee)" },{ icon: "doc", text: "Deep-dived into Plaid API (50+ endpoints across 8 products)" },{ icon: "target", text: "Identified core challenges: data normalization, error handling across failure modes, and consent/token lifecycle management" }] } },
-      { title: "Process", content: "STRUCTURED", structured: { sections: [{ heading: "Architecture & Integration", text: "Designed end-to-end architecture with 6 core components: Client App, API Gateway, Plaid Integration Service, Internal Data Store, Webhook Processor, and Notification Service.", bullets: ["Authored API specifications for account aggregation, transaction sync, and identity verification", "Designed abstraction layer to standardize responses across institutions"] }, { heading: "Data Modeling & Normalization", text: "Mapped Plaid schemas to a normalized internal data model with unified entities:", bullets: ["Accounts, Transactions, Users", "Addressed inconsistencies in formats, naming, and structure across institutions"] }, { heading: "Reliability Design", text: "Defined handling strategies for critical failure modes:", bullets: ["Token expiration \u2192 re-authentication flow", "Institution downtime \u2192 cached data + polling", "Partial data sync \u2192 retry with backoff", "Consent revocation \u2192 data purge protocol"], highlight: "Built a structured error taxonomy to standardize system responses, proactively preventing ~80% of edge-case bugs" }] } },
-      { title: "Artifacts", content: "VISUAL" },
-      { title: "Impact", content: "ICONROWS", structured: { intro: "Designing toward measurable platform outcomes:", rows: [{ icon: "clock", text: "Reduce integration time from weeks to hours via abstraction layer" },{ icon: "users", text: "Support 500+ financial institutions via Plaid integration" },{ icon: "target", text: "Achieve 99.5% data sync reliability target" },{ icon: "check", text: "Maintain SOC2-compliant consent and data handling design" },{ icon: "alert", text: "Enable real-time transaction updates via webhook architecture" }] } },
-      { title: "Learnings", content: "The hardest part of system design is not the happy path, it's failure handling at scale. Designing a clear error taxonomy upfront prevents ~80% of edge-case issues. Data normalization across institutions is a core product challenge, not just technical work. API platforms require thinking in systems, not features." }
-    ] },
+    cardDesc: "Designed a platform connecting 500+ financial institutions via Plaid with unified data normalization and a structured error taxonomy. Built to reduce integration time from weeks to hours.",
+    highlights: [["What", "Platform connecting 500+ financial institutions via Plaid with unified data normalization"], ["Scope", "System architecture, API specifications, error taxonomy, and end-to-end documentation"], ["Key insight", "Error taxonomy upfront prevents ~80% of edge-case bugs at scale"]],
+    meta: [["Scope", "System architecture, API specifications, data modeling, error handling design, and end-to-end documentation"], ["Why This Project", "Deep-dive into Open Banking infrastructure to understand fintech platform design patterns at scale"]],
+    highlights: [["What", "Platform connecting 500+ financial institutions via Plaid with unified data normalization"], ["Scope", "System architecture, API specifications, error taxonomy, and end-to-end documentation"], ["Key insight", "Error taxonomy upfront prevents ~80% of edge-case bugs at scale"]],
+    problem: {
+      intro: "Fintech applications rely on access to user financial data, but integrating with financial institutions is highly fragmented.",
+      points: ["Each institution exposes different APIs, auth methods, and schemas", "Varying rate limits, uptime reliability, and error behaviors across providers", "Integration cycles take weeks per institution, a major bottleneck for fintech teams trying to scale"],
+      insight: "This is not just a technical integration problem. Each institution's schema quirks cascade into downstream product bugs. I saw this pattern across 3 different financial institutions I worked with at Infosys."
+    },
+    research: {
+      intro: "Evaluated the Open Banking ecosystem to make an informed provider decision, not just \"use Plaid,\" but why Plaid over alternatives for this specific use case.",
+      providers: [
+        { name: "Plaid", verdict: "Selected", color: "#22c55e", points: ["50+ endpoints, 8 products", "Sandbox for development", "Best developer docs", "Broadest institution coverage"] },
+        { name: "MX", verdict: "Evaluated", color: null, points: ["Strong data enrichment", "Cleaner categorization", "Smaller institution network", "Fewer developer resources"] },
+        { name: "Yodlee", verdict: "Evaluated", color: null, points: ["Longest market history", "Complex legacy APIs", "Slower integration cycle", "Enterprise-focused pricing"] }
+      ],
+      standards: "PSD2 (EU Open Banking directive), FDX (Financial Data Exchange), and how Plaid abstracts compliance across jurisdictions",
+      apiScope: "Link, Auth, Transactions, Identity, Balance, Investments, Liabilities, Assets. Mapped each product to platform requirements."
+    },
+    scope: {
+      prioritized: [["Error taxonomy", "~80% of production edge-case bugs originate from unhandled failure modes. Addressing this first de-risks everything downstream."], ["Data normalization layer", "Core product value. Without clean data, no feature built on top works correctly."], ["Webhook-driven sync", "Real-time updates are table-stakes expectations from fintech users."], ["Consent lifecycle", "SOC2 compliance is non-negotiable for financial data."]],
+      deferred: [["Multi-provider abstraction", "Plaid-only first. Adding MX/Yodlee later via the abstraction layer designed for exactly this purpose."], ["Transaction categorization", "Plaid's built-in categories are sufficient for v1. Custom ML enrichment is a v2 feature."], ["User-facing dashboard", "Wireframed but deferred. The platform layer has to be solid before the UI layer matters."], ["Rate limit optimization", "Basic backoff is sufficient for v1. Intelligent request batching is a scale optimization."]],
+      framework: "Reliability over features. A platform that handles 5 failure modes gracefully is more valuable than one with 10 features that breaks unpredictably."
+    },
+    metrics: [["Hours", "Integration time (from weeks)"], ["500+", "Institutions via Plaid"], ["99.5%", "Data sync reliability"], ["SOC2", "Compliant consent"], ["~80%", "Edge-case bugs prevented"]],
+    learnings: [
+      { title: "Failure handling is the product", text: "The hardest part of system design is not the happy path. Designing a clear error taxonomy upfront prevents ~80% of edge-case issues in production." },
+      { title: "Data normalization is a product challenge", text: "Mapping inconsistent schemas across institutions is not just technical plumbing. It directly affects whether downstream features work correctly for users." },
+      { title: "Think in systems, not features", text: "API platforms require understanding how every component interacts under stress. A single feature can break 3 other flows if the system boundaries are not clear." },
+      { title: "BA skills are PM superpowers", text: "Requirements elicitation, stakeholder mapping, gap analysis, and process modeling translate directly into product specification, prioritization, and cross-functional leadership." }
+    ]
+  }
 ];
 
 var artifactsList = [
@@ -103,7 +141,7 @@ var education = [
   { school: "B M S College of Engineering", degree: "B.E. Industrial Engineering & Management", date: "Aug 2020" }
 ];
 
-var allPages = ["Home", "My Work", "How I Work", "Case Studies", "Artifacts"];
+var allPages = ["Home", "My Work", "How I Work", "Case Studies", "Artifacts", "FinConnect Demo"];
 
 /* ===== SHARED COMPONENTS ===== */
 function FI(p) { var s = useState(false); useEffect(function() { var t = setTimeout(function() { s[1](true); }, p.d || 0); return function() { clearTimeout(t); }; }, []); return <div style={{ opacity: s[0] ? 1 : 0, transform: s[0] ? "translateY(0)" : "translateY(12px)", transition: "opacity 0.5s ease, transform 0.5s ease" }}>{p.children}</div>; }
@@ -112,7 +150,7 @@ function Tag(p) { var c = p.color || C.coolBlue; return <span style={{ display: 
 function PB() { return <span style={{ fontSize: 9, fontWeight: 600, color: C.ember, background: C.ember + "12", border: "1px solid " + C.ember + "25", borderRadius: 4, padding: "3px 8px", textTransform: "uppercase", letterSpacing: 0.5 }}>Personal Project</span>; }
 function PBL() { return <span style={{ fontSize: 9, fontWeight: 600, color: "#fff", background: "rgba(255,255,255,0.2)", border: "1px solid rgba(255,255,255,0.3)", borderRadius: 4, padding: "3px 8px", textTransform: "uppercase", letterSpacing: 0.5 }}>Personal Project</span>; }
 function Card(p) { var h = p.hover !== false; return (<div style={Object.assign({ background: C.white, border: "1px solid " + C.border, borderRadius: 10, transition: "box-shadow 0.3s, transform 0.3s" }, p.style || {})} onMouseOver={function(e) { if (h) { e.currentTarget.style.boxShadow = "0 6px 24px rgba(26,29,35,0.06)"; e.currentTarget.style.transform = "translateY(-2px)"; } }} onMouseOut={function(e) { if (h) { e.currentTarget.style.boxShadow = "none"; e.currentTarget.style.transform = "none"; } }}>{p.children}</div>); }
-function MG(p) { return (<div style={{ display: "grid", gridTemplateColumns: "repeat(" + (p.cols || 4) + ", 1fr)", gap: 8, marginTop: 16 }}>{p.items.map(function(it, i) { return <div key={i} style={{ background: C.cloud, borderRadius: 6, padding: "12px 8px", textAlign: "center" }}><div style={{ fontSize: it[0].length > 4 ? 15 : 20, fontWeight: 400, fontFamily: "'Inter', sans-serif", color: C.ink }}>{it[0]}</div><div style={{ fontSize: 9.5, color: C.textLight, fontFamily: "'Inter', sans-serif", marginTop: 2 }}>{it[1]}</div></div>; })}</div>); }
+function MG(p) { return (<div style={{ display: "grid", gridTemplateColumns: "repeat(" + (p.cols || 4) + ", 1fr)", gap: 8, marginTop: 16 }}>{p.items.map(function(it, i) { return <div key={i} style={{ background: C.cloud, borderRadius: 6, padding: "12px 8px", textAlign: "center" }}><div style={{ fontSize: 18, fontWeight: 600, fontFamily: "'Inter', sans-serif", color: C.ink }}>{it[0]}</div><div style={{ fontSize: 9.5, color: C.textLight, fontFamily: "'Inter', sans-serif", marginTop: 2 }}>{it[1]}</div></div>; })}</div>); }
 function SL(p) { return <p style={{ fontSize: 11, fontWeight: 600, color: C.coolBlue, letterSpacing: 1, textTransform: "uppercase", margin: "0 0 10px", fontFamily: "'Inter', sans-serif" }}>{p.children}</p>; }
 function AW(p) { return <div style={{ background: C.cloud, borderRadius: 8, padding: 16, overflowX: "auto", marginBottom: 14, border: "1px solid " + C.borderLight }}>{p.children}</div>; }
 
@@ -392,7 +430,7 @@ function HomePage(p) {
     <div style={{ maxWidth: 1140, margin: "0 auto", padding: "44px 24px" }}>
       <FI><h2 style={{ fontFamily: "'Inter', sans-serif", fontSize: 30, fontWeight: 400, color: C.ink, margin: "0 0 6px" }}>Case Studies</h2><p style={{ fontSize: 13.5, color: C.textLight, margin: "0 0 24px", fontFamily: "'Inter', sans-serif" }}>End-to-end case studies in digital transformation and fintech platform design with complete Business Analyst deliverables.</p></FI>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 14, gridAutoRows: "1fr" }}>
-        {caseStudies.map(function(cs, idx) { return (<div key={idx} style={{ display: "flex" }}><Card style={{ padding: 0, overflow: "hidden", cursor: "pointer", flex: 1, display: "flex", flexDirection: "column" }}><div style={{ height: 4, background: cs.color, flexShrink: 0 }} /><div style={{ padding: "18px 18px 16px", flex: 1, display: "flex", flexDirection: "column" }}><div style={{ display: "flex", gap: 8, alignItems: "center", marginBottom: 8, flexWrap: "wrap" }}><Tag color={cs.color}>{cs.category}</Tag>{cs.personal && <PB />}</div><h3 style={{ fontFamily: "'Inter', sans-serif", fontSize: 18, fontWeight: 400, color: C.text, margin: "0 0 6px" }}>{cs.title}</h3><p style={{ fontSize: 12, color: C.textMid, lineHeight: 1.6, margin: "0 0 10px", fontFamily: "'Inter', sans-serif", flex: 1 }}>{cs.summary.substring(0, 130)}...</p><button onClick={function() { p.set("Case Studies", idx); }} style={{ background: "none", border: "none", cursor: "pointer", fontSize: 11.5, fontWeight: 600, color: cs.color, padding: 0, fontFamily: "'Inter', sans-serif", alignSelf: "flex-start" }}>{"Read Case Study \u2192"}</button></div></Card></div>); })}
+        {caseStudies.map(function(cs, idx) { return (<div key={idx} style={{ display: "flex" }}><Card style={{ padding: 0, overflow: "hidden", cursor: "pointer", flex: 1, display: "flex", flexDirection: "column" }}><div style={{ height: 4, background: cs.color, flexShrink: 0 }} /><div style={{ padding: "18px 18px 16px", flex: 1, display: "flex", flexDirection: "column" }}><div style={{ display: "flex", gap: 8, alignItems: "center", marginBottom: 8, flexWrap: "wrap" }}><Tag color={cs.color}>{cs.category}</Tag>{cs.personal && <PB />}</div><h3 style={{ fontFamily: "'Inter', sans-serif", fontSize: 18, fontWeight: 400, color: C.text, margin: "0 0 6px" }}>{cs.title}</h3><p style={{ fontSize: 12, color: C.textMid, lineHeight: 1.6, margin: "0 0 10px", fontFamily: "'Inter', sans-serif", flex: 1 }}>{cs.cardDesc}</p><button onClick={function() { p.set("Case Studies", idx); }} style={{ background: "none", border: "none", cursor: "pointer", fontSize: 11.5, fontWeight: 600, color: cs.color, padding: 0, fontFamily: "'Inter', sans-serif", alignSelf: "flex-start" }}>{"Read Case Study \u2192"}</button>{cs.id === "openbanking" && <button onClick={function() { p.set("FinConnect Demo"); }} style={{ background: "none", border: "none", cursor: "pointer", fontSize: 11.5, fontWeight: 600, color: C.coolBlue, padding: 0, fontFamily: "'Inter', sans-serif", alignSelf: "flex-start", marginTop: 6 }}>{"See Live Demo \u2192"}</button>}</div></Card></div>); })}
       </div>
     </div>
     <div style={{ background: C.white, borderTop: "1px solid " + C.border, padding: "32px 24px" }}><div style={{ maxWidth: 1140, margin: "0 auto" }}>
@@ -477,29 +515,120 @@ function PhaseContent(p) {
 }
 
 function CasePage(p) {
-  var s1 = useState(p.initialStudy || 0); var s2 = useState(0);
-  useEffect(function() { s2[1](0); }, [s1[0]]);
+  var s1 = useState(p.initialStudy || 0);
   useEffect(function() { if (p.initialStudy !== undefined && p.initialStudy !== null) s1[1](p.initialStudy); }, [p.initialStudy]);
   var s = caseStudies[s1[0]]; var AC = artifactComponents[s.id];
+  var F = "'Inter', sans-serif";
+
+  function SecNum(p) { return (<div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 14 }}><div style={{ width: 28, height: 28, borderRadius: "50%", background: s.color + "12", border: "1px solid " + s.color + "30", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 12, fontWeight: 600, color: s.color, fontFamily: F, flexShrink: 0 }}>{p.n}</div><div style={{ fontSize: 9.5, fontWeight: 700, letterSpacing: 1.5, textTransform: "uppercase", color: C.textLight, fontFamily: F }}>{p.label}</div></div>); }
+
+  function InsightBox(p) { return (<div style={{ background: s.color + "06", border: "1px solid " + s.color + "16", borderRadius: 0, borderLeft: "3px solid " + s.color, padding: "12px 16px", marginTop: 14 }}><p style={{ fontSize: 10, fontWeight: 700, letterSpacing: 1.2, textTransform: "uppercase", color: s.color, margin: "0 0 4px", fontFamily: F }}>{p.label || "BA insight"}</p><p style={{ fontSize: 12.5, color: C.textMid, lineHeight: 1.65, margin: 0, fontFamily: F }}>{p.text}</p></div>); }
+
   return (<div style={{ maxWidth: 1140, margin: "0 auto", padding: "44px 24px" }}>
-    <FI><h2 style={{ fontFamily: "'Inter', sans-serif", fontSize: 26, fontWeight: 600, color: C.ink, margin: "0 0 4px" }}>Case Studies</h2><p style={{ fontSize: 13, color: C.textLight, margin: "0 0 24px", fontFamily: "'Inter', sans-serif" }}>{"Each follows: Problem \u2192 Approach \u2192 Process \u2192 Artifacts \u2192 Impact \u2192 Learnings"}</p></FI>
-    <FI d={50}><div style={{ display: "flex", gap: 6, marginBottom: 20, flexWrap: "wrap" }}>{caseStudies.map(function(cs, i) { return (<button key={i} onClick={function() { s1[1](i); }} style={{ background: s1[0] === i ? cs.color : "transparent", color: s1[0] === i ? "#fff" : C.textMid, border: "1.5px solid " + (s1[0] === i ? cs.color : C.border), borderRadius: 6, padding: "7px 14px", fontSize: 10.5, fontWeight: 600, cursor: "pointer", fontFamily: "'Inter', sans-serif", transition: "all 0.2s" }}>{cs.title}</button>); })}</div></FI>
-    <FI d={80}><Card hover={false} style={{ overflow: "hidden" }}>
-      <div style={{ background: s.color, padding: "18px 22px" }}>
-        <p style={{ fontSize: 10.5, color: "rgba(255,255,255,0.5)", margin: "0 0 6px", fontFamily: "'Inter', sans-serif", letterSpacing: 0.2 }}>{s.category.split(", ").join(" \u00b7 ")}{s.personal ? " \u00b7 Personal Project" : ""}</p>
-        <h3 style={{ fontFamily: "'Inter', sans-serif", fontSize: 18, fontWeight: 400, color: "rgba(255,255,255,0.95)", margin: "0 0 6px" }}>{s.title}</h3>
-        <p style={{ fontSize: 12, color: "rgba(255,255,255,0.68)", margin: 0, lineHeight: 1.6, fontFamily: "'Inter', sans-serif" }}>{s.summary}</p>
+    <FI><h2 style={{ fontFamily: F, fontSize: 26, fontWeight: 600, color: C.ink, margin: "0 0 4px" }}>Case Studies</h2><p style={{ fontSize: 13, color: C.textLight, margin: "0 0 24px", fontFamily: F }}>{"Problem \u2192 Research \u2192 Prioritization \u2192 Solution \u2192 Impact"}</p></FI>
+
+    {/* Study selector */}
+    <FI d={50}><div style={{ display: "flex", gap: 6, marginBottom: 20, flexWrap: "wrap" }}>{caseStudies.map(function(cs, i) { return (<button key={i} onClick={function() { s1[1](i); }} style={{ background: s1[0] === i ? cs.color : "transparent", color: s1[0] === i ? "#fff" : C.textMid, border: "1.5px solid " + (s1[0] === i ? cs.color : C.border), borderRadius: 6, padding: "7px 14px", fontSize: 10.5, fontWeight: 600, cursor: "pointer", fontFamily: F, transition: "all 0.2s" }}>{cs.title}</button>); })}</div></FI>
+
+    {/* Hero */}
+    <FI d={80}><div style={{ background: s.color, borderRadius: 10, padding: "20px 24px", marginBottom: 20 }}>
+      <p style={{ fontSize: 10.5, color: "rgba(255,255,255,0.5)", margin: "0 0 6px", fontFamily: F, letterSpacing: 0.2 }}>{s.category.split(", ").join(" \u00b7 ")}{s.personal ? " \u00b7 Personal Project" : ""}</p>
+      <h3 style={{ fontFamily: F, fontSize: 20, fontWeight: 600, color: "rgba(255,255,255,0.95)", margin: "0 0 14px" }}>{s.title}</h3>
+      <div style={{ display: "flex", gap: 12 }}>
+        {s.highlights.map(function(h, i) { return <div key={i} style={{ flex: 1, background: "rgba(255,255,255,0.1)", borderRadius: 8, padding: "12px 14px", border: "1px solid rgba(255,255,255,0.12)" }}>
+          <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: 1, textTransform: "uppercase", color: "rgba(255,255,255,0.5)", marginBottom: 6, fontFamily: F }}>{h[0]}</div>
+          <div style={{ fontSize: 12, color: "rgba(255,255,255,0.85)", lineHeight: 1.5, fontFamily: F }}>{h[1]}</div>
+        </div>; })}
       </div>
-      <div style={{ padding: "12px 22px", background: s.color + "06", borderBottom: "1px solid " + C.border, display: "flex", gap: 32, flexWrap: "wrap" }}>
-        <div style={{ flex: 1, minWidth: 180 }}><p style={{ fontSize: 9, fontWeight: 600, letterSpacing: 1.2, textTransform: "uppercase", color: C.textLight, fontFamily: "'Inter', sans-serif", margin: "0 0 3px" }}>{s.scope ? "Scope" : "My Role"}</p><p style={{ fontSize: 11.5, color: C.textMid, margin: 0, lineHeight: 1.5, fontFamily: "'Inter', sans-serif" }}>{s.scope || s.role}</p></div>
-        <div style={{ flex: 1, minWidth: 180 }}><p style={{ fontSize: 9, fontWeight: 600, letterSpacing: 1.2, textTransform: "uppercase", color: C.textLight, fontFamily: "'Inter', sans-serif", margin: "0 0 3px" }}>{s.why ? "Why This Project" : "Stakeholders"}</p><p style={{ fontSize: 11.5, color: C.textMid, margin: 0, lineHeight: 1.5, fontFamily: "'Inter', sans-serif" }}>{s.why || s.stakeholders}</p></div>
-      </div>
-      <div style={{ display: "flex", borderBottom: "1px solid " + C.border }}>{s.phases.map(function(ph, i) { return (<button key={i} onClick={function() { s2[1](i); }} style={{ flex: 1, background: s2[0] === i ? s.color + "08" : "transparent", border: "none", borderBottom: s2[0] === i ? "2.5px solid " + s.color : "2.5px solid transparent", padding: "10px 6px", cursor: "pointer", fontFamily: "'Inter', sans-serif", fontSize: 10.5, fontWeight: s2[0] === i ? 700 : 500, color: s2[0] === i ? s.color : C.textLight, transition: "all 0.15s" }}>{ph.title}</button>); })}</div>
-      <div style={{ padding: "20px 22px", minHeight: 100 }}>
-        <PhaseContent phase={s.phases[s2[0]]} color={s.color}>{s.phases[s2[0]].content === "VISUAL" && <AC />}</PhaseContent>
-      </div>
-      <div style={{ padding: "0 22px 12px", display: "flex", gap: 3 }}>{s.phases.map(function(_, i) { return <div key={i} style={{ flex: 1, height: 3, borderRadius: 2, background: i <= s2[0] ? s.color : C.borderLight, transition: "background 0.3s" }} />; })}</div>
-    </Card></FI>
+    </div></FI>
+
+    {/* Section 1: Problem */}
+    <FI d={120}><div style={{ marginBottom: 20 }}>
+      <SecNum n="1" label="Problem discovery" />
+      <Card hover={false} style={{ padding: "20px 24px" }}>
+        <p style={{ fontSize: 13, color: C.textMid, lineHeight: 1.75, margin: "0 0 14px", fontFamily: F }}>{s.problem.intro}</p>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(" + Math.min(s.problem.points.length, 4) + ", 1fr)", gap: 10, marginBottom: 0 }}>
+          {s.problem.points.map(function(pt, i) { return <div key={i} style={{ background: C.cloud, borderRadius: 8, padding: "12px 14px", border: "1px solid " + C.borderLight }}><p style={{ fontSize: 12, color: C.textMid, lineHeight: 1.6, margin: 0, fontFamily: F }}>{pt}</p></div>; })}
+        </div>
+        <InsightBox text={s.problem.insight} />
+      </Card>
+    </div></FI>
+
+    {/* Section 2: Approach / Research */}
+    <FI d={160}><div style={{ marginBottom: 20 }}>
+      <SecNum n="2" label={s.research ? "Research & landscape analysis" : "Approach & discovery"} />
+      <Card hover={false} style={{ padding: "20px 24px" }}>
+        {s.approach && <div>
+          <p style={{ fontSize: 13, color: C.textMid, lineHeight: 1.75, margin: "0 0 12px", fontFamily: F }}>{s.approach.intro}</p>
+          {s.approach.points.map(function(pt, i) { return <div key={i} style={{ display: "flex", gap: 8, marginBottom: 6 }}><PhaseIcon name={["users","target","chat","eye","search"][i] || "doc"} color={s.color} /><p style={{ fontSize: 12.5, color: C.textMid, lineHeight: 1.55, margin: 0, fontFamily: F }}>{pt}</p></div>; })}
+        </div>}
+        {s.research && <div>
+          <p style={{ fontSize: 13, color: C.textMid, lineHeight: 1.75, margin: "0 0 14px", fontFamily: F }}>{s.research.intro}</p>
+          <SL>Provider evaluation</SL>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 10, marginBottom: 16 }}>
+            {s.research.providers.map(function(pv, i) { return <div key={i} style={{ background: i === 0 ? s.color + "06" : C.cloud, border: "1px solid " + (i === 0 ? s.color + "25" : C.borderLight), borderRadius: 8, padding: "14px 16px" }}>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
+                <span style={{ fontSize: 14, fontWeight: 600, color: C.text, fontFamily: F }}>{pv.name}</span>
+                <span style={{ fontSize: 9, fontWeight: 600, color: pv.color || C.textLight, background: (pv.color || C.textLight) + "15", padding: "2px 8px", borderRadius: 4, textTransform: "uppercase", letterSpacing: 0.5 }}>{pv.verdict}</span>
+              </div>
+              {pv.points.map(function(pt, j) { return <div key={j} style={{ display: "flex", gap: 6, marginBottom: 3 }}><span style={{ color: i === 0 ? s.color : C.textFaint, fontSize: 4, marginTop: 6, flexShrink: 0 }}>{"\u25CF"}</span><span style={{ fontSize: 11.5, color: C.textMid, lineHeight: 1.5, fontFamily: F }}>{pt}</span></div>; })}
+            </div>; })}
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
+            <div style={{ background: C.cloud, borderRadius: 8, padding: "12px 14px", border: "1px solid " + C.borderLight }}><div style={{ fontSize: 10, fontWeight: 700, letterSpacing: 1, textTransform: "uppercase", color: s.color, marginBottom: 5, fontFamily: F }}>Standards researched</div><div style={{ fontSize: 12, color: C.textMid, lineHeight: 1.7, fontFamily: F }}>{s.research.standards}</div></div>
+            <div style={{ background: C.cloud, borderRadius: 8, padding: "12px 14px", border: "1px solid " + C.borderLight }}><div style={{ fontSize: 10, fontWeight: 700, letterSpacing: 1, textTransform: "uppercase", color: s.color, marginBottom: 5, fontFamily: F }}>API deep-dive</div><div style={{ fontSize: 12, color: C.textMid, lineHeight: 1.7, fontFamily: F }}>{s.research.apiScope}</div></div>
+          </div>
+        </div>}
+      </Card>
+    </div></FI>
+
+    {/* Section 3: Scope & Prioritization */}
+    <FI d={200}><div style={{ marginBottom: 20 }}>
+      <SecNum n="3" label="Scope & prioritization" />
+      <Card hover={false} style={{ padding: "20px 24px" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14, marginBottom: 0 }}>
+          <div style={{ background: "#22c55e08", border: "1px solid #22c55e20", borderRadius: 8, padding: "16px 18px" }}>
+            <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: 1.2, textTransform: "uppercase", color: "#16803C", marginBottom: 10, fontFamily: F }}>{s.scope.deferred ? "Prioritized (v1)" : "Prioritized"}</div>
+            {s.scope.prioritized.map(function(item, i) { return <div key={i} style={{ marginBottom: i < s.scope.prioritized.length - 1 ? 10 : 0 }}><div style={{ fontSize: 12, fontWeight: 600, color: C.text, marginBottom: 2, fontFamily: F }}>{item[0]}</div><div style={{ fontSize: 11, color: C.textMid, lineHeight: 1.6, fontFamily: F }}>{item[1]}</div></div>; })}
+          </div>
+          <div style={{ background: C.cloud, border: "1px solid " + C.borderLight, borderRadius: 8, padding: "16px 18px" }}>
+            <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: 1.2, textTransform: "uppercase", color: C.textLight, marginBottom: 10, fontFamily: F }}>{s.scope.deferred ? "Deferred (v2+)" : "Key tradeoffs"}</div>
+            {(s.scope.deferred || s.scope.tradeoffs).map(function(item, i) { var list = s.scope.deferred || s.scope.tradeoffs; return <div key={i} style={{ marginBottom: i < list.length - 1 ? 10 : 0 }}><div style={{ fontSize: 12, fontWeight: 600, color: C.text, marginBottom: 2, fontFamily: F }}>{item[0]}</div><div style={{ fontSize: 11, color: C.textMid, lineHeight: 1.6, fontFamily: F }}>{item[1]}</div></div>; })}
+          </div>
+        </div>
+        {s.scope.framework && <InsightBox label="Prioritization framework" text={s.scope.framework} />}
+      </Card>
+    </div></FI>
+
+    {/* Section 4: Solution + Artifacts */}
+    <FI d={240}><div style={{ marginBottom: 20 }}>
+      <SecNum n="4" label={s.id === "openbanking" ? "Architecture & system design" : "Solution design"} />
+      <Card hover={false} style={{ padding: "20px 24px" }}>
+        <AC />
+
+        {/* Live Simulation CTA for Open Banking */}
+        {s.id === "openbanking" && <div onClick={function() { if (p.set) p.set("FinConnect Demo"); }} style={{ marginTop: 16, background: "linear-gradient(135deg, " + C.ink + ", " + C.charcoal + ")", borderRadius: 8, padding: "14px 18px", display: "flex", alignItems: "center", justifyContent: "space-between", cursor: "pointer", transition: "transform 0.2s", }} onMouseOver={function(e) { e.currentTarget.style.transform = "translateY(-1px)"; }} onMouseOut={function(e) { e.currentTarget.style.transform = "none"; }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+            <div style={{ width: 7, height: 7, borderRadius: "50%", background: C.coolBlue, boxShadow: "0 0 8px " + C.coolBlue + "66" }} />
+            <span style={{ fontSize: 13, fontWeight: 600, color: "#fff", fontFamily: F }}>See the architecture in action</span>
+          </div>
+          <span style={{ fontSize: 12, color: C.skyMist, fontWeight: 500, fontFamily: F }}>{"Launch Live Simulation \u2192"}</span>
+        </div>}
+      </Card>
+    </div></FI>
+
+    {/* Section 5: Impact & Learnings */}
+    <FI d={280}><div>
+      <SecNum n="5" label="Impact & learnings" />
+      <Card hover={false} style={{ padding: "20px 24px" }}>
+        <SL>Measurable outcomes</SL>
+        <MG cols={s.metrics.length} items={s.metrics} />
+        <div style={{ marginTop: 20, marginBottom: 4 }}><SL>Key learnings</SL></div>
+        <div style={{ display: "grid", gridTemplateColumns: s.learnings.length > 2 ? "1fr 1fr" : "1fr", gap: 10 }}>
+          {s.learnings.map(function(l, i) { return <div key={i} style={{ background: C.cloud, borderRadius: 8, padding: "14px 16px", border: "1px solid " + C.borderLight }}><div style={{ fontSize: 12.5, fontWeight: 600, color: C.text, marginBottom: 4, fontFamily: F }}>{l.title}</div><div style={{ fontSize: 11.5, color: C.textMid, lineHeight: 1.65, fontFamily: F }}>{l.text}</div></div>; })}
+        </div>
+      </Card>
+    </div></FI>
   </div>);
 }
 
@@ -554,6 +683,319 @@ function Footer() {
   return (<div style={{ background: C.ink, padding: "24px", marginTop: 32 }}><div style={{ maxWidth: 1140, margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 10 }}><div><div style={{ fontFamily: "'Inter', sans-serif", fontSize: 16, color: "#fff" }}>Harshitha Babu Reddy</div><div style={{ fontSize: 10.5, color: "rgba(255,255,255,0.38)", marginTop: 3, fontFamily: "'Inter', sans-serif" }}>{"Business Analyst"}</div></div><div style={{ display: "flex", gap: 18, fontFamily: "'Inter', sans-serif", alignItems: "center" }}><a href={"mailto:" + profile.email} style={{ fontSize: 10.5, color: "rgba(255,255,255,0.38)", textDecoration: "none" }}>{profile.email}</a><a href={"https://" + profile.linkedin} target="_blank" rel="noopener noreferrer" style={{ fontSize: 10.5, color: C.skyMist, cursor: "pointer", textDecoration: "none" }}>{"LinkedIn \u2197"}</a></div></div></div>);
 }
 
+function FinConnectPage() {
+  var activeScenario = useState(null);
+  var events = useState([]);
+  var activeNodes = useState([]);
+  var showData = useState(false);
+  var showError = useState(false);
+  var isPlaying = useState(false);
+  var resolved = useState(false);
+  var logRef = { current: null };
+  var timeouts = { current: [] };
+
+  useEffect(function() { return function() { timeouts.current.forEach(clearTimeout); }; }, []);
+  useEffect(function() { if (logRef.current) logRef.current.scrollTop = logRef.current.scrollHeight; }, [events[0]]);
+
+  var hasAutoPlayed = useState(false);
+  useEffect(function() { if (!hasAutoPlayed[0]) { hasAutoPlayed[1](true); setTimeout(function() { playScenario("happy"); }, 600); } }, []);
+
+  var SCENARIOS = {
+    happy: {
+      name: "Happy path", icon: "\u2713", color: "#22c55e",
+      dataPanel: {
+        raw: '{\n  "account_id": "vzeNDwK7KQIm9",\n  "balances": {\n    "available": 100.00,\n    "current": 110.94,\n    "iso_currency_code": "USD"\n  },\n  "name": "Plaid Checking",\n  "subtype": "checking",\n  "type": "depository"\n}',
+        normalized: '{\n  "id": "acc_a1b2c3d4",\n  "institution": "ins_chase",\n  "balance_cents": 11094,\n  "available_cents": 10000,\n  "currency": "USD",\n  "display_name": "Plaid Checking",\n  "category": "CHECKING",\n  "synced_at": "2024-01-15T12:00:05Z"\n}'
+      },
+      events: [
+        { delay: 0, time: "12:00:01", msg: "POST /link/token/create", type: "api", nodes: ["client", "gateway"] },
+        { delay: 800, time: "12:00:01", msg: "Forwarding to Plaid, creating link session", type: "info", nodes: ["gateway", "plaid"] },
+        { delay: 1600, time: "12:00:02", msg: "User authenticated at Chase (sandbox)", type: "info", nodes: ["plaid"] },
+        { delay: 2400, time: "12:00:03", msg: "POST /item/public_token/exchange", type: "api", nodes: ["client", "gateway"] },
+        { delay: 3200, time: "12:00:03", msg: "Access token stored, item_abc123 created", type: "info", nodes: ["gateway", "plaid"], showData: true },
+        { delay: 4000, time: "12:00:04", msg: "Webhook: INITIAL_UPDATE received", type: "info", nodes: ["webhook", "plaid"] },
+        { delay: 4800, time: "12:00:05", msg: "Syncing 3 accounts, 47 transactions", type: "info", nodes: ["plaid", "datastore"], showData: true },
+        { delay: 5600, time: "12:00:05", msg: "Sync complete. Data normalized and stored", type: "success", nodes: ["datastore"] }
+      ]
+    },
+    tokenExpired: {
+      name: "Token expired", icon: "\u2717", color: "#ef4444",
+      dataPanel: {
+        raw: '{\n  "error_type": "ITEM_ERROR",\n  "error_code": "ITEM_LOGIN_REQUIRED",\n  "error_message": "the login details\n    of this item have changed",\n  "display_message": null,\n  "request_id": "HNTDNrA8F1shFEz"\n}',
+        normalized: '{\n  "error_id": "err_7x9k2m",\n  "code": "TOKEN_EXPIRED",\n  "severity": "HIGH",\n  "recovery": "RE_AUTH_REQUIRED",\n  "item_id": "item_abc123",\n  "institution": "ins_chase",\n  "action": "trigger_link_update",\n  "user_notified": true\n}'
+      },
+      errorCard: { code: "ITEM_LOGIN_REQUIRED", category: "Token lifecycle", severity: "high", recovery: "Trigger re-authentication via Link update mode", description: "Access token invalidated by institution" },
+      events: [
+        { delay: 0, time: "12:00:01", msg: "Scheduled sync triggered for item_abc123", type: "info", nodes: ["gateway"] },
+        { delay: 800, time: "12:00:01", msg: "GET /accounts/get (item_abc123)", type: "api", nodes: ["gateway", "plaid"] },
+        { delay: 1600, time: "12:00:02", msg: "ITEM_LOGIN_REQUIRED: token invalidated", type: "error", nodes: ["plaid"], showData: true, showError: true },
+        { delay: 2400, time: "12:00:02", msg: "Error taxonomy > token_expiry > re-auth required", type: "error", nodes: ["plaid"] },
+        { delay: 3200, time: "12:00:03", msg: 'Notification: "Re-link your Chase account"', type: "info", nodes: ["plaid", "notification"] },
+        { delay: 4800, time: "12:00:08", msg: "User completed re-authentication via Link", type: "info", nodes: ["client", "gateway"] },
+        { delay: 5600, time: "12:00:09", msg: "New access_token stored. Old token purged", type: "recovery", nodes: ["gateway", "plaid", "datastore"] },
+        { delay: 7200, time: "12:00:10", msg: "Sync resumed. Recovery complete", type: "success", nodes: ["datastore"] }
+      ]
+    },
+    institutionDown: {
+      name: "Institution down", icon: "\u26A0", color: "#eab308",
+      dataPanel: {
+        raw: '{\n  "error_type": "INSTITUTION_ERROR",\n  "error_code":\n    "INSTITUTION_NOT_RESPONDING",\n  "error_message": "the financial\n    institution is not responding",\n  "status": {\n    "status": "INSTITUTION_DOWN",\n    "last_update":\n      "2024-01-15T10:00:00Z"\n  }\n}',
+        normalized: '{\n  "error_id": "err_9m3nq1",\n  "code": "PROVIDER_UNAVAILABLE",\n  "severity": "MEDIUM",\n  "recovery": "CACHE_AND_RETRY",\n  "institution": "ins_chase",\n  "cache_age_minutes": 120,\n  "retry_strategy":\n    "exponential_backoff",\n  "next_retry_at":\n    "2024-01-15T12:00:35Z"\n}'
+      },
+      errorCard: { code: "INSTITUTION_NOT_RESPONDING", category: "Provider reliability", severity: "medium", recovery: "Serve cached data + exponential backoff retry", description: "Institution temporarily unavailable" },
+      events: [
+        { delay: 0, time: "12:00:01", msg: "Transaction sync triggered", type: "info", nodes: ["gateway"] },
+        { delay: 800, time: "12:00:01", msg: "GET /transactions/sync", type: "api", nodes: ["gateway", "plaid"] },
+        { delay: 1600, time: "12:00:02", msg: "INSTITUTION_NOT_RESPONDING (Chase)", type: "warning", nodes: ["plaid"], showData: true, showError: true },
+        { delay: 2400, time: "12:00:02", msg: "Fallback: serving cached data (last sync 2h ago)", type: "info", nodes: ["datastore"] },
+        { delay: 3200, time: "12:00:05", msg: "Polling retry #1: institution still down", type: "warning", nodes: ["plaid"] },
+        { delay: 4800, time: "12:00:05", msg: "Exponential backoff: next retry in 30s", type: "info", nodes: ["plaid"] },
+        { delay: 6400, time: "12:00:35", msg: "Polling retry #2: institution recovered", type: "recovery", nodes: ["plaid"] },
+        { delay: 8000, time: "12:00:36", msg: "Full sync completed. Cache refreshed", type: "success", nodes: ["plaid", "datastore"] }
+      ]
+    },
+    partialSync: {
+      name: "Partial sync", icon: "\u25D0", color: "#f97316",
+      dataPanel: {
+        raw: '{\n  "transactions": [\n    /* 12 of 47 */\n  ],\n  "total_transactions": 47,\n  "has_more": true,\n  "next_cursor":\n    "eyJhY2NvdW50X2..."\n}',
+        normalized: '{\n  "sync_id": "sync_4kd82n",\n  "status": "PARTIAL",\n  "progress": {\n    "received": 12,\n    "total": 47,\n    "percentage": 25.5\n  },\n  "cursor": "eyJhY2NvdW50X2...",\n  "strategy":\n    "cursor_pagination"\n}'
+      },
+      errorCard: { code: "SYNC_INCOMPLETE", category: "Data integrity", severity: "medium", recovery: "Cursor-based pagination retry with backoff", description: "Incomplete transaction batch received" },
+      events: [
+        { delay: 0, time: "12:00:01", msg: "Initial sync triggered for new item", type: "info", nodes: ["gateway", "plaid"] },
+        { delay: 800, time: "12:00:01", msg: "GET /accounts/get > 3 accounts synced", type: "api", nodes: ["plaid", "datastore"] },
+        { delay: 1600, time: "12:00:02", msg: "GET /transactions/sync", type: "api", nodes: ["plaid"] },
+        { delay: 2400, time: "12:00:02", msg: "Partial response: 12/47 transactions received", type: "warning", nodes: ["plaid"], showData: true, showError: true },
+        { delay: 3200, time: "12:00:04", msg: "Retry #1 with cursor (backoff: 2s)", type: "info", nodes: ["plaid"] },
+        { delay: 4800, time: "12:00:06", msg: "+20 transactions received (32/47)", type: "info", nodes: ["plaid", "datastore"] },
+        { delay: 5600, time: "12:00:10", msg: "Retry #2 with updated cursor (backoff: 4s)", type: "info", nodes: ["plaid"] },
+        { delay: 7200, time: "12:00:14", msg: "All 47 transactions synced across 3 retries", type: "success", nodes: ["plaid", "datastore"] }
+      ]
+    },
+    consentRevoked: {
+      name: "Consent revoked", icon: "\u2298", color: "#a855f7",
+      dataPanel: {
+        raw: '{\n  "webhook_type": "ITEM",\n  "webhook_code":\n    "PENDING_DISCONNECT",\n  "item_id":\n    "eVBnVMp7zdTJLkRNr33",\n  "consent_expiration_time":\n    "2024-01-15T12:00:00Z",\n  "environment": "production"\n}',
+        normalized: '{\n  "event_id": "evt_p2x9r7",\n  "type": "CONSENT_REVOKED",\n  "item_id": "item_abc123",\n  "action": "DATA_PURGE",\n  "purge_scope": {\n    "accounts": 3,\n    "transactions": 47,\n    "tokens": 1\n  },\n  "audit_status":\n    "SOC2_VERIFIED"\n}'
+      },
+      errorCard: { code: "PENDING_DISCONNECT", category: "Consent management", severity: "critical", recovery: "SOC2-compliant data purge protocol", description: "User revoked data access consent" },
+      events: [
+        { delay: 0, time: "12:00:01", msg: "Webhook received: PENDING_DISCONNECT", type: "info", nodes: ["webhook"] },
+        { delay: 800, time: "12:00:01", msg: "User revoked consent at Chase portal", type: "error", nodes: ["webhook", "plaid"], showError: true },
+        { delay: 1600, time: "12:00:02", msg: "Data purge protocol initiated", type: "info", nodes: ["plaid"], showData: true },
+        { delay: 2400, time: "12:00:02", msg: "Purging: 3 accounts, 47 transactions, 1 token", type: "warning", nodes: ["plaid", "datastore"] },
+        { delay: 3200, time: "12:00:03", msg: "Audit log: purge_complete, item_abc123", type: "info", nodes: ["datastore"] },
+        { delay: 4000, time: "12:00:03", msg: 'Notification: "Chase account disconnected"', type: "info", nodes: ["notification"] },
+        { delay: 5600, time: "12:00:04", msg: "Item removed. SOC2-compliant purge verified", type: "success", nodes: ["datastore"] }
+      ]
+    }
+  };
+
+  function playScenario(key) {
+    timeouts.current.forEach(clearTimeout);
+    timeouts.current = [];
+    events[1]([]); activeNodes[1]([]); showData[1](false); showError[1](false); resolved[1](false);
+    activeScenario[1](key); isPlaying[1](true);
+    var sc = SCENARIOS[key]; var newT = [];
+    sc.events.forEach(function(ev, i) {
+      var t = setTimeout(function() {
+        events[1](function(prev) { return prev.concat([ev]); });
+        activeNodes[1](ev.nodes || []);
+        if (ev.showData) showData[1](true);
+        if (ev.showError) showError[1](true);
+        if (ev.type === "success") resolved[1](true);
+        if (i === sc.events.length - 1) setTimeout(function() { isPlaying[1](false); }, 400);
+      }, ev.delay);
+      newT.push(t);
+    });
+    timeouts.current = newT;
+  }
+
+  var sc = activeScenario[0] ? SCENARIOS[activeScenario[0]] : null;
+  var typeColors = { api: "#6D4AE0", info: C.text, success: "#16803C", warning: "#A16207", error: "#DC2626", recovery: "#5B3FD6" };
+  var typeIcons = { api: "\u2192", info: "\u2192", success: "\u2713", warning: "\u26A0", error: "\u2717", recovery: "\u21BA" };
+  var FM = "'JetBrains Mono', monospace";
+
+  function ArchNode(p) {
+    var on = activeNodes[0].indexOf(p.id) !== -1;
+    return (<div style={{
+      background: on ? C.charcoal : C.slate, border: "1.5px solid " + (on ? (sc ? sc.color : C.coolBlue) : C.charcoal),
+      borderRadius: 8, padding: "10px 12px", textAlign: "center", flex: "1 1 0", minWidth: 0,
+      transition: "all 0.35s ease", boxShadow: on ? "0 0 16px " + (sc ? sc.color : C.coolBlue) + "30" : "none", position: "relative"
+    }}>
+      {on && <div style={{ position: "absolute", top: 5, right: 6, width: 5, height: 5, borderRadius: "50%", background: sc ? sc.color : C.coolBlue, animation: "fcPulse 1.2s ease-in-out infinite" }} />}
+      <div style={{ fontSize: 11.5, fontWeight: 600, color: on ? "#fff" : C.skyMist, transition: "color 0.35s", fontFamily: "'Inter', sans-serif" }}>{p.label}</div>
+      {p.sub && <div style={{ fontSize: 9, color: on ? "rgba(255,255,255,0.5)" : C.textFaint, marginTop: 2, fontFamily: "'Inter', sans-serif" }}>{p.sub}</div>}
+    </div>);
+  }
+
+  function FCArr(from, to) {
+    var on = activeNodes[0].indexOf(from) !== -1 && activeNodes[0].indexOf(to) !== -1;
+    return (<div style={{ display: "flex", alignItems: "center", justifyContent: "center", width: 24, flexShrink: 0 }}>
+      <div style={{ width: "100%", height: 1.5, background: on ? (sc ? sc.color : C.coolBlue) : C.charcoal, transition: "background 0.35s", position: "relative" }}>
+        {on && <div style={{ position: "absolute", top: -2.5, width: 6, height: 6, borderRadius: "50%", background: sc ? sc.color : C.coolBlue, animation: "fcTravel 0.6s ease-out forwards" }} />}
+      </div>
+      <div style={{ width: 0, height: 0, borderTop: "4px solid transparent", borderBottom: "4px solid transparent", borderLeft: "6px solid " + (on ? (sc ? sc.color : C.coolBlue) : C.charcoal), transition: "border-color 0.35s", flexShrink: 0 }} />
+    </div>);
+  }
+
+  var mainNodes = [["client","Client App","Web / Mobile"],["gateway","API Gateway","Auth, Rate Limit"],["plaid","Plaid Service","Link, Sync"],["datastore","Data Store","Postgres + Redis"]];
+  var mainIds = ["client","gateway","plaid","datastore"];
+  var supportActive = activeNodes[0].indexOf("webhook") !== -1 || activeNodes[0].indexOf("notification") !== -1;
+  var supportColor = supportActive ? (sc ? sc.color : C.coolBlue) : C.charcoal;
+
+  return (<div style={{ maxWidth: 1140, margin: "0 auto", padding: "0 24px 44px" }}>
+    <style>{"@keyframes fcPulse{0%,100%{opacity:1}50%{opacity:.35}}@keyframes fcSlide{from{opacity:0;transform:translateX(-8px)}to{opacity:1;transform:translateX(0)}}@keyframes fcTravel{from{left:0}to{left:calc(100% - 6px)}}@keyframes fcFade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}"}</style>
+
+    {/* Hero */}
+    <FI><div style={{ background: "linear-gradient(145deg, " + C.ink + " 0%, " + C.slate + " 40%, " + C.charcoal + " 100%)", borderRadius: 12, padding: "36px 32px 28px", marginTop: 32, position: "relative", overflow: "hidden" }}>
+      <div style={{ position: "absolute", top: -60, right: -60, width: 240, height: 240, background: "radial-gradient(circle, " + C.coolBlue + "15 0%, transparent 65%)", borderRadius: "50%" }} />
+      <div style={{ position: "relative" }}>
+        <div style={{ display: "flex", gap: 8, marginBottom: 12, flexWrap: "wrap" }}><Tag color={C.skyMist}>FinTech</Tag><Tag color={C.skyMist}>API Platform Design</Tag><PBL /></div>
+        <h1 style={{ fontFamily: "'Inter', sans-serif", fontSize: 28, fontWeight: 700, color: "#fff", margin: "0 0 8px", lineHeight: 1.15 }}>Open Banking Platform: Live Simulation</h1>
+        <p style={{ fontSize: 13, color: "rgba(255,255,255,0.6)", maxWidth: 580, lineHeight: 1.7, margin: 0, fontFamily: "'Inter', sans-serif" }}>Watch how the platform handles 5 real-world scenarios: successful data sync, token expiration, institution downtime, partial sync recovery, and consent revocation. Each scenario demonstrates the architecture, error taxonomy, and data normalization layer in action.</p>
+      </div>
+    </div></FI>
+
+    {/* Simulation */}
+    <FI d={100}><div style={{ marginTop: 24 }}>
+      <Card hover={false} style={{ overflow: "hidden", padding: 0 }}>
+        <div style={{ background: "linear-gradient(135deg, " + C.ink + ", " + C.charcoal + ")", padding: "16px 22px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+            <div style={{ width: 8, height: 8, borderRadius: "50%", background: C.coolBlue, boxShadow: "0 0 8px " + C.coolBlue + "66" }} />
+            <div><div style={{ fontSize: 15, fontWeight: 700, color: "#fff", fontFamily: "'Inter', sans-serif" }}>FinConnect</div><div style={{ fontSize: 10, color: "rgba(255,255,255,0.4)", fontFamily: "'Inter', sans-serif" }}>Live platform simulation</div></div>
+          </div>
+          <div style={{ display: "flex", alignItems: "center", gap: 5, fontSize: 10, color: isPlaying[0] ? C.coolBlue : "#22c55e", fontWeight: 500, fontFamily: "'Inter', sans-serif" }}>
+            <div style={{ width: 5, height: 5, borderRadius: "50%", background: isPlaying[0] ? C.coolBlue : "#22c55e", animation: isPlaying[0] ? "fcPulse 1s ease-in-out infinite" : "none" }} />
+            {isPlaying[0] ? "Simulating..." : "System online"}
+          </div>
+        </div>
+
+        <div style={{ background: C.ink, padding: "18px 22px" }}>
+          <div style={{ fontSize: 9, fontWeight: 700, letterSpacing: 1.5, textTransform: "uppercase", color: C.textFaint, marginBottom: 12, fontFamily: "'Inter', sans-serif" }}>Architecture & data flow</div>
+          <div style={{ display: "flex", alignItems: "center", gap: 0 }}>
+            {mainNodes.map(function(n, i) {
+              return <div key={n[0]} style={{ display: "flex", alignItems: "center", flex: "1 1 0", minWidth: 0 }}>
+                <ArchNode id={n[0]} label={n[1]} sub={n[2]} />
+                {i < 3 && FCArr(mainIds[i], mainIds[i + 1])}
+              </div>;
+            })}
+          </div>
+          <div style={{ display: "flex", justifyContent: "center", marginTop: 8 }}>
+            <svg width="220" height="22" viewBox="0 0 220 22" style={{ display: "block" }}>
+              <line x1="110" y1="0" x2="110" y2="10" stroke={supportColor} strokeWidth="1.5" style={{ transition: "stroke 0.35s" }} />
+              <line x1="40" y1="10" x2="180" y2="10" stroke={supportColor} strokeWidth="1.5" style={{ transition: "stroke 0.35s" }} />
+              <line x1="40" y1="10" x2="40" y2="22" stroke={activeNodes[0].indexOf("webhook") !== -1 ? (sc ? sc.color : C.coolBlue) : C.charcoal} strokeWidth="1.5" style={{ transition: "stroke 0.35s" }} />
+              <line x1="180" y1="10" x2="180" y2="22" stroke={activeNodes[0].indexOf("notification") !== -1 ? (sc ? sc.color : C.coolBlue) : C.charcoal} strokeWidth="1.5" style={{ transition: "stroke 0.35s" }} />
+            </svg>
+          </div>
+          <div style={{ display: "flex", gap: 20, justifyContent: "center", maxWidth: 360, margin: "0 auto" }}>
+            <ArchNode id="webhook" label="Webhook Processor" sub="Plaid Events" />
+            <ArchNode id="notification" label="Notification Svc" sub="Email, Push" />
+          </div>
+        </div>
+
+        <div style={{ background: C.ink, padding: "0 22px 18px", borderBottom: "1px solid " + C.charcoal }}>
+          <div style={{ fontSize: 9, fontWeight: 700, letterSpacing: 1.5, textTransform: "uppercase", color: C.textFaint, marginBottom: 10, fontFamily: "'Inter', sans-serif" }}>Select scenario</div>
+          <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
+            {Object.keys(SCENARIOS).map(function(key) {
+              var s = SCENARIOS[key]; var on = activeScenario[0] === key;
+              return <button key={key} onClick={function() { playScenario(key); }} disabled={isPlaying[0] && !on} style={{
+                background: on ? s.color : "transparent", color: on ? "#fff" : C.skyMist,
+                border: "1.5px solid " + (on ? s.color : C.deepBlue), borderRadius: 6,
+                padding: "7px 14px", fontSize: 11, fontWeight: on ? 600 : 400,
+                cursor: isPlaying[0] && !on ? "not-allowed" : "pointer",
+                opacity: isPlaying[0] && !on ? 0.4 : 1,
+                transition: "all 0.25s", fontFamily: "'Inter', sans-serif", display: "flex", alignItems: "center", gap: 5
+              }}><span style={{ fontSize: 10 }}>{s.icon}</span>{s.name}</button>;
+            })}
+          </div>
+          <div style={{ marginTop: 10, fontSize: 10, color: C.coolBlue, fontFamily: "'Inter', sans-serif", display: "flex", alignItems: "center", gap: 4 }}>
+            <span style={{ display: "inline-block" }}>{"\u2191"}</span>
+            Try a failure scenario to see error handling in action
+          </div>
+        </div>
+
+        {activeScenario[0] && <div style={{ animation: "fcFade 0.3s ease-out" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", borderBottom: "1px solid " + C.border }}>
+            <div style={{ padding: "16px 18px", borderRight: "1px solid " + C.border }}>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
+                <span style={{ fontSize: 9, fontWeight: 700, letterSpacing: 1.5, textTransform: "uppercase", color: C.textLight, fontFamily: "'Inter', sans-serif" }}>Live event stream</span>
+                <span style={{ fontSize: 10, color: C.textFaint, fontFamily: FM }}>{events[0].length + " events"}</span>
+              </div>
+              <div ref={function(el) { logRef.current = el; }} style={{ maxHeight: 220, overflowY: "auto", scrollBehavior: "smooth" }}>
+                {events[0].length === 0 && <div style={{ color: C.textFaint, fontSize: 11, fontStyle: "italic", fontFamily: "'Inter', sans-serif" }}>Waiting for events...</div>}
+                {events[0].map(function(ev, i) {
+                  return <div key={activeScenario[0] + "-" + i} style={{ display: "flex", gap: 6, alignItems: "flex-start", padding: "3px 0", animation: "fcSlide 0.3s ease-out" }}>
+                    <span style={{ color: C.textLight, fontSize: 10, fontFamily: FM, flexShrink: 0, minWidth: 48 }}>{ev.time}</span>
+                    <span style={{ color: typeColors[ev.type], fontSize: 11, flexShrink: 0, width: 14, textAlign: "center" }}>{typeIcons[ev.type]}</span>
+                    <span style={{ color: typeColors[ev.type], fontSize: 11, fontFamily: FM, lineHeight: 1.5, fontWeight: ev.type === "success" || ev.type === "error" ? 600 : 400 }}>{ev.msg}</span>
+                  </div>;
+                })}
+              </div>
+            </div>
+            <div style={{ padding: "16px 18px" }}>
+              <div style={{ fontSize: 9, fontWeight: 700, letterSpacing: 1.5, textTransform: "uppercase", color: C.textLight, marginBottom: 10, fontFamily: "'Inter', sans-serif" }}>Data transformation</div>
+              {!showData[0] && <div style={{ color: C.textFaint, fontSize: 11, fontStyle: "italic", fontFamily: "'Inter', sans-serif" }}>Data will appear as the simulation runs...</div>}
+              {showData[0] && sc && <div style={{ animation: "fcFade 0.4s ease-out" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 10 }}>
+                  <span style={{ background: "#ef444418", color: "#DC2626", padding: "2px 8px", borderRadius: 4, fontSize: 9, fontWeight: 600, fontFamily: "'Inter', sans-serif" }}>RAW (Plaid)</span>
+                  <span style={{ color: C.coolBlue, fontSize: 12 }}>{"\u2192"}</span>
+                  <span style={{ background: "#22c55e18", color: "#16803C", padding: "2px 8px", borderRadius: 4, fontSize: 9, fontWeight: 600, fontFamily: "'Inter', sans-serif" }}>NORMALIZED</span>
+                </div>
+                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
+                  <div style={{ background: C.cloud, borderRadius: 6, padding: 10, border: "1px solid " + C.borderLight, maxHeight: 160, overflowY: "auto" }}>
+                    <pre style={{ fontFamily: FM, fontSize: 9.5, lineHeight: 1.5, color: C.textMid, margin: 0, whiteSpace: "pre-wrap", wordBreak: "break-all" }}>{sc.dataPanel.raw}</pre>
+                  </div>
+                  <div style={{ background: C.cloud, borderRadius: 6, padding: 10, border: "1px solid " + C.borderLight, maxHeight: 160, overflowY: "auto" }}>
+                    <pre style={{ fontFamily: FM, fontSize: 9.5, lineHeight: 1.5, color: "#5B3FD6", margin: 0, whiteSpace: "pre-wrap", wordBreak: "break-all" }}>{sc.dataPanel.normalized}</pre>
+                  </div>
+                </div>
+              </div>}
+            </div>
+          </div>
+          {showError[0] && sc && sc.errorCard && <div style={{ padding: "14px 18px", borderBottom: "1px solid " + C.border, animation: "fcFade 0.4s ease-out" }}>
+            <div style={{ fontSize: 9, fontWeight: 700, letterSpacing: 1.5, textTransform: "uppercase", color: C.textLight, marginBottom: 10, fontFamily: "'Inter', sans-serif" }}>Error taxonomy</div>
+            <div style={{ background: C.cloud, padding: "14px 16px", borderLeft: "3px solid " + sc.errorCard.color, borderRadius: 0 }}>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 6 }}>
+                <span style={{ color: sc.errorCard.color, fontWeight: 700, fontSize: 11, fontFamily: FM }}>{sc.errorCard.code}</span>
+                <span style={{ fontSize: 9, fontWeight: 600, padding: "2px 8px", borderRadius: 4, background: resolved[0] ? "#22c55e15" : sc.errorCard.color + "15", color: resolved[0] ? "#16803C" : sc.errorCard.color, textTransform: "uppercase", letterSpacing: 0.5, fontFamily: "'Inter', sans-serif" }}>{resolved[0] ? "Resolved" : sc.errorCard.severity}</span>
+              </div>
+              <div style={{ fontSize: 11.5, color: C.textMid, marginBottom: 4, fontFamily: "'Inter', sans-serif" }}>{sc.errorCard.description}</div>
+              <div style={{ fontSize: 10.5, color: C.textLight, fontFamily: "'Inter', sans-serif" }}><span style={{ fontWeight: 600, color: C.textMid }}>Recovery: </span>{sc.errorCard.recovery}</div>
+              <div style={{ fontSize: 10.5, color: C.textLight, marginTop: 3, fontFamily: "'Inter', sans-serif" }}><span style={{ fontWeight: 600, color: C.textMid }}>Category: </span>{sc.errorCard.category}</div>
+            </div>
+          </div>}
+        </div>}
+
+        <div style={{ padding: "10px 18px", display: "flex", justifyContent: "space-between", alignItems: "center", fontSize: 10, color: C.textFaint, background: C.cloud, fontFamily: "'Inter', sans-serif" }}>
+          <span>Simulation powered by mock Plaid API schemas</span>
+          <span style={{ display: "flex", alignItems: "center", gap: 4 }}><span style={{ width: 4, height: 4, borderRadius: "50%", background: "#16803C", display: "inline-block" }} />500+ institutions supported</span>
+        </div>
+      </Card>
+    </div></FI>
+
+    {/* Metrics */}
+    <FI d={150}><div style={{ marginTop: 20 }}>
+      <MG cols={5} items={[["Hours","Integration time (from weeks)"],["500+","Institutions via Plaid"],["99.5%","Data sync reliability"],["SOC2","Compliant consent"],["~80%","Edge-case bugs prevented"]]} />
+    </div></FI>
+
+    {/* Design Decisions */}
+    <FI d={200}><div style={{ marginTop: 20, display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 10 }}>
+      {[
+        { title: "Why error taxonomy first?", text: "~80% of production edge-case bugs originate from unhandled failure modes. Designing the taxonomy before building features prevents cascading issues." },
+        { title: "Why normalization over raw pass-through?", text: "Each institution returns different schemas. Without a normalization layer, every downstream feature must handle N variations instead of one clean model." },
+        { title: "Why webhook-driven over polling?", text: "Polling 500+ institutions at intervals wastes resources and delays updates. Webhooks provide real-time sync with graceful fallback to polling when needed." }
+      ].map(function(d, i) {
+        return <Card key={i} hover={false} style={{ padding: "16px 18px" }}>
+          <div style={{ fontSize: 12.5, fontWeight: 600, color: C.text, marginBottom: 6, fontFamily: "'Inter', sans-serif" }}>{d.title}</div>
+          <div style={{ fontSize: 11.5, color: C.textMid, lineHeight: 1.65, fontFamily: "'Inter', sans-serif" }}>{d.text}</div>
+        </Card>;
+      })}
+    </div></FI>
+  </div>);
+}
+
 export default function Portfolio() {
   var ps = useState("Home"); var ss = useState(null);
   function setPage(pg, idx) { if (idx !== undefined) ss[1](idx); ps[1](pg); }
@@ -562,10 +1004,11 @@ export default function Portfolio() {
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
     <Nav active={ps[0]} set={setPage} />
     {ps[0] === "Home" && <HomePage set={setPage} />}
-    {ps[0] === "Case Studies" && <CasePage initialStudy={ss[0]} />}
+    {ps[0] === "Case Studies" && <CasePage initialStudy={ss[0]} set={setPage} />}
     {ps[0] === "Artifacts" && <ArtifactPage />}
     {ps[0] === "How I Work" && <MethodPage />}
     {ps[0] === "My Work" && <ExpPage />}
+    {ps[0] === "FinConnect Demo" && <FinConnectPage />}
     <Footer />
   </div>);
 }
