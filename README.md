@@ -2,8 +2,6 @@
 
 # Harshitha Reddy
 
-**Business Analyst × Industrial Engineer × Builder**
-
 I translate complex business processes into clear requirements, practical workflows, and digital products that people can confidently use.
 
 [View Live Portfolio](https://www.harshithareddy.com) · [LinkedIn](https://www.linkedin.com/in/harshithababureddy)
