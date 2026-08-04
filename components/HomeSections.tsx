@@ -187,17 +187,32 @@ export function Experience() {
                     i === 0 ? "bg-accent" : "bg-line"
                   }`}
                 />
-                <p className="font-mono text-[11px] lowercase text-deep">{e.period}</p>
-                <p
-                  className="mt-1 font-display text-[17px] font-bold text-ink"
-                  style={{ letterSpacing: "-0.015em" }}
-                >
-                  {e.company}
-                  <span className="font-body text-[14px] font-normal text-muted">
-                    {" "}
-                    · {e.role}
-                  </span>
+                <p className="font-mono text-[11px] lowercase text-deep">
+                  {e.period}
+                  {e.note && (
+                    <span className="text-[10px] text-faint"> · {e.note}</span>
+                  )}
                 </p>
+                <div className="mt-1 flex items-center justify-between gap-6">
+                  <p
+                    className="font-display text-[17px] font-bold text-ink"
+                    style={{ letterSpacing: "-0.015em" }}
+                  >
+                    {e.company}
+                    <span className="font-body text-[14px] font-normal text-muted">
+                      {" "}
+                      · {e.role}
+                    </span>
+                  </p>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={e.logo}
+                    alt=""
+                    aria-hidden="true"
+                    className="shrink-0"
+                    style={{ height: e.logoH, filter: "brightness(0)", opacity: e.logoOpacity ?? 0.55 }}
+                  />
+                </div>
                 <p className="mt-2 max-w-[540px] text-[13.5px] leading-relaxed text-muted">
                   {e.detail}
                 </p>

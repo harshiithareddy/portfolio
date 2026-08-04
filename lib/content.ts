@@ -49,7 +49,7 @@ export const workCards = [
     title: "PeriWise",
     client: "june 2026 · shebuilds 48-hour hackathon",
     summary:
-      "A symptom recognition app for perimenopause, built solo in one weekend and live today.",
+      "A perimenopause companion for check-ins, patterns, and doctor-ready summaries. Built solo in one weekend, live and still growing.",
     chip: "live",
   },
   {
@@ -81,13 +81,26 @@ export const beliefs = [
   },
 ];
 
-export const experience = [
+type ExperienceEntry = {
+  period: string;
+  role: string;
+  company: string;
+  detail: string;
+  logo: string;
+  logoH: number;
+  logoOpacity?: number;
+  note?: string;
+};
+
+export const experience: ExperienceEntry[] = [
   {
     period: "aug 2023 to jan 2026 · hartford, ct",
     role: "Business Analyst, Consultant",
     company: "Infosys",
     detail:
       "Clients: Wedbush Securities and Truist Bank. Money movement, account onboarding, KYC/AML rule engines, and the service request portal.",
+    logo: "/logos/infosys.svg",
+    logoH: 14,
   },
   {
     period: "may 2022 to dec 2022 · kennesaw, ga",
@@ -95,6 +108,8 @@ export const experience = [
     company: "Novelis",
     detail:
       "CapEx platform rollout across five plants. Workflow configuration, system integrations, test cases, and training for more than a hundred stakeholders.",
+    logo: "/logos/novelis.svg",
+    logoH: 11,
   },
   {
     period: "mar 2020 to mar 2021 · bangalore, india",
@@ -102,6 +117,10 @@ export const experience = [
     company: "TENR Inventure",
     detail:
       "Analytics layer for a cloud ERP: dynamic supplier KPI dashboards for procurement and operations teams.",
+    logo: "/logos/tenr.png",
+    logoH: 16,
+    logoOpacity: 0.8,
+    note: "now blunet",
   },
   {
     period: "nov 2019 to feb 2020 · bangalore, india",
@@ -109,6 +128,9 @@ export const experience = [
     company: "TENR Inventure",
     detail:
       "Built a Python anomaly detection model for manufacturing sensor data that cut unplanned downtime, and led the data mapping for an ERP migration.",
+    logo: "/logos/tenr.png",
+    logoH: 16,
+    logoOpacity: 0.8,
   },
 ];
 

@@ -11,6 +11,7 @@ import {
   WalkthroughGallery,
 } from "./RealPortVisuals";
 import FinConnectSim from "./FinConnectSim";
+import { PeriWiseGallery } from "./PeriWiseVisuals";
 import { OperatorMascot, PresenterMascot } from "@/components/Mascots";
 import Reveal from "@/components/Reveal";
 
@@ -363,27 +364,27 @@ export function PeriwiseCase() {
   const steps = [
     {
       n: "1",
-      title: "Select symptoms",
-      body: "Pick what you are experiencing from a plain, judgment-free list.",
+      title: "Check in",
+      body: "A few quiet questions about sleep, mood, and what showed up today. About two minutes.",
     },
     {
       n: "2",
-      title: "Understand them",
-      body: "Each symptom explained in plain language, with what is normal and what deserves a doctor visit.",
+      title: "See patterns",
+      body: "The dashboard shows how sleep, mood, and symptoms move over weeks, not just today.",
     },
     {
       n: "3",
-      title: "Share the card",
-      body: "Generate a shareable card that opens the conversation with family, in words that feel safe to say.",
+      title: "Share what helps",
+      body: "A doctor-ready summary scored on the Menopause Rating Scale, or a gentle view for someone in your Care Circle.",
     },
   ];
   return (
     <CaseShell
       kicker="02 · shebuilds 48-hour hackathon · june 2026"
       title="PeriWise"
-      intro="Perimenopause symptoms are widely misdiagnosed, and the gap is worse in South Asian immigrant communities where the topic simply is not discussed. PeriWise is a symptom recognition and education app that helps women name what is happening and start the conversation at home. Built solo, in one weekend, and live today."
+      intro="Perimenopause symptoms are widely misdiagnosed, and the gap is worse in South Asian immigrant communities where the topic simply is not discussed. PeriWise started as a weekend build for the SheBuilds hackathon and kept growing: it is now a companion that turns quiet daily check-ins into visible patterns, doctor-ready summaries, and gentler conversations at home. Built solo, and live today."
     >
-      <CaseSection kicker="how it works" title="Three steps, no jargon.">
+      <CaseSection kicker="how it works" title="Three quiet steps.">
         <div className="grid gap-4 md:grid-cols-3">
           {steps.map((s, i) => (
             <Reveal key={s.n} delay={i * 0.06}>
@@ -401,12 +402,21 @@ export function PeriwiseCase() {
         </div>
       </CaseSection>
 
+      <CaseSection kicker="the walkthrough" title="The real screens.">
+        <p className="mb-6 max-w-[620px] text-[15px] leading-relaxed text-muted">
+          Captured from the live app. Click any screen to look closer.
+        </p>
+        <PeriWiseGallery />
+      </CaseSection>
+
       <CaseSection kicker="why it matters">
         <p className="max-w-[620px] text-[15px] leading-relaxed text-muted">
           The product decisions came from listening: symptoms described in
-          everyday words rather than clinical terms, education before any tracking
-          features, and a shareable card because the hardest step is not
-          recognizing a symptom, it is saying it out loud to your family.
+          everyday words rather than clinical terms, education first and tracking
+          second, and sharing built around consent. Every Care Circle toggle
+          starts off, and Clara, the AI care companion, never sees check-ins or
+          private notes. The hardest step is still saying it out loud to your
+          family, so PeriWise gives that conversation somewhere to start.
         </p>
       </CaseSection>
 
@@ -421,22 +431,12 @@ export function PeriwiseCase() {
             >
               periwise.lovable.app
             </a>
-            <p className="mt-2 text-[13px] text-muted">
-              Use the demo account to skip signup.
+            <p className="mt-2 max-w-[420px] text-[13px] text-muted">
+              Two demo flows, one click each, no signup: walk through it as a
+              user, or see what a family member sees in the Care Circle view.
             </p>
           </div>
-          <div className="flex flex-wrap gap-2">
-            <span className="chip-tag" style={{ textTransform: "none" }}>
-              demo: test@gmail.com
-            </span>
-            <span className="chip-tag" style={{ textTransform: "none" }}>
-              password: Demo123!
-            </span>
-          </div>
         </div>
-        <p className="mt-4 font-mono text-[11px] lowercase text-faint">
-          screenshots coming with the next product update
-        </p>
       </CaseSection>
     </CaseShell>
   );

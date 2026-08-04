@@ -30,7 +30,7 @@ const CASES: Record<string, { component: React.ComponentType; title: string; des
     component: PeriwiseCase,
     title: "PeriWise · Harshitha Reddy",
     description:
-      "A symptom recognition and education app for perimenopause, built solo in the SheBuilds 48-hour hackathon and live today.",
+      "A perimenopause companion that turns daily check-ins into patterns, doctor-ready summaries, and family support. Started at the SheBuilds 48-hour hackathon, built solo, and live today.",
   },
 };
 
