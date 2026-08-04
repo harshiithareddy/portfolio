@@ -34,9 +34,9 @@ Demonstrates: product strategy, workflow design, document processing, responsibl
 
 ### [PeriWise](https://www.harshithareddy.com/work/periwise)
 
-A symptom recognition and education app that helps women name perimenopause patterns and prepare for more productive healthcare conversations. Built solo during the SheBuilds 48-hour hackathon.
+A perimenopause companion that turns quiet daily check-ins into visible patterns, doctor-ready summaries scored on the Menopause Rating Scale, and gentler conversations at home through Care Circle sharing that is off by default. Started solo at the SheBuilds 48-hour hackathon, live and still growing.
 
-Demonstrates: user research, rapid product development, health-data privacy, and end-to-end ownership.
+Demonstrates: user research, rapid product development, health-data privacy by design, and end-to-end ownership.
 
 ### [FinConnect](https://www.harshithareddy.com/work/finconnect)
 
